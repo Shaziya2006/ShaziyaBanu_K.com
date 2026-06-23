@@ -1,0 +1,409 @@
+User: RIGHT: Content stacked (18px, line-height 2, #ccc):
+
+Heading "Who I Am" in 26px white:
+"I'm Shaziya Banu K — a curious, creative, and driven Computer Science Engineering 
+student at REVA University in Bengaluru, India. I believe technology is most powerful when it's built with 
+empathy and intention."
+
+Heading "My Story" in 26px white:
+"My journey into tech started with a simple fascination — how do websites actually 
+work? That curiosity led me to frontend development, then to IoT, then to AI tools, 
+and now I'm on my way to becoming a Full Stack Software Engineer. Every project I 
+take on pushes me to learn something new, think differently, and build better."
+
+Heading "Beyond the Screen" in 26px white:
+"When I'm not coding or designing, you'll find me exploring new AI tools, sketching 
+UI ideas in my notebook, participating in innovation programs, or just having a 
+deep conversation about the future of technology. I'm a firm believer that the 
+best engineers are also great storytellers."
+
+BLOCK 2 — "My Values" (full width, ~30vh):
+Heading: "What Drives Me" in 32px white, centered.
+Four cards in a grid (2x2), each with a large pink emoji icon, 20px title, 16px description:
+- 💡 Curiosity — "I never stop asking 'why' and 'what if'"
+- 🎯 Impact — "I build things that solve real problems for real people"
+- 🤝 Collaboration — "Great ideas come from great teams"
+- 🚀 Growth — "Every day is a chance to learn something new"
+
+BLOCK 3 — "A Quick Snapshot" (~20vh):
+Three large horizontal stat bars with label and pink fill animation on scroll:
+- Frontend Skills: 75%
+- IoT & Hardware: 65%
+- UI/UX Design: 70%
+Each bar: label left, percentage right, pink animated fill, dark track.
+
+BLOCK 4 — "Currently" (~20vh):
+Two columns of status cards with pink left border (like a status dashboard):
+- 📚 Currently Studying: B.Tech CSE at REVA University (2023–2027)
+- 🔨 Currently Building: RapidReach — Emergency Response Platform
+- 🌱 Currently Learning: Full Stack Web Development
+- 🎯 Current Goal: Land my first tech internship
+- 💬 Open To: Collaborations, internships, freelance projects
+- 📍 Based In: Bengaluru, India
+
+CTA at bottom of about page:
+Centered pink button "See My Skills →" linking to skills.html
+
+========================================
+PAGE 3 — skills.html (SKILLS)
+Scroll length: ~200vh
+========================================
+
+PAGE HERO BANNER (50vh):
+- "03 —" in pink, "My Skills" in 52px white
+- Subtext: "A toolkit built through projects, curiosity, and late nights."
+
+BLOCK 1 — "Technical Skills" (~60vh):
+Heading: "What I Know" in 32px white.
+Grid of large skill cards (3 columns), each card:
+- Dark bg (#111), pink top border 3px, border-radius 14px, padding 32px
+- Large emoji icon (48px), skill name in 22px white bold
+- 2–3 sentence description in 16px #ccc
+- Animated pink progress bar at bottom showing proficiency
+- Pink glow on hover, slight lift
+
+Cards:
+🌐 Frontend Development — 78%
+"Building clean, responsive, and accessible web interfaces using HTML, CSS, 
+and JavaScript. I focus on pixel-perfect layouts and smooth user interactions."
+
+💻 Website Development — 75%
+"End-to-end website creation from wireframe to deployment. I understand the 
+full pipeline of turning an idea into a live, working website."
+
+🤖 Prompt Engineering — 80%
+"Crafting precise, creative prompts to get the best outputs from AI models like 
+Claude, ChatGPT, and Copilot. I use AI as a superpower in my workflow."
+
+📡 IoT Systems — 65%
+"Working with microcontrollers like ESP32, sensors like DHT11, BLE communication, 
+and relay boards to build smart, connected hardware projects."
+
+🎨 UI/UX Design — 72%
+"Designing intuitive user interfaces and user journeys. I use tools like Figma 
+and focus on accessibility, clarity, and visual hierarchy in every design."
+
+🚀 Full Stack Development — 35% (Learning)
+"Currently on the journey — learning backend concepts, APIs, databases, and 
+server-side logic to complement my frontend skills."
+
+BLOCK 2 — "Tools I Use" (~40vh):
+Heading: "My Toolkit" in 32px white.
+Horizontal scrollable pill/tag row of tools in pink bordered chips (18px):
+VS Code · GitHub · Git · Figma · ESP32 · Arduino IDE · ChatGPT · Claude AI
+· GitHub Copilot · HTML5 · CSS3 · JavaScript · C · Moodle
+
+BLOCK 3 — "How I Learn" (~30vh):
+Three cards in a row with pink icon, 20px heading, 16px text:
+- 🛠️ Build Projects — "The best way I learn is by building real things"
+- 🤝 Collaborate — "Working with teams teaches me more than any course"
+- 🔍 Explore — "I constantly explore new tools, papers, and trends"
+
+BLOCK 4 — "Currently Leveling Up" (~30vh):
+Heading: "What I'm Learning Right Now" in 28px white.
+Three horizontal learning cards with a pink progress indicator and status badge:
+- Full Stack Web Development — In Progress 🔄
+- React.js Fundamentals — Starting Soon 📌
+- Backend with Node.js — On the Roadmap 🗺️
+
+CTA: "See My Education →" linking to education.html
+
+========================================
+PAGE 4 — education.html (EDUCATION)
+Scroll length: ~180vh
+========================================
+
+PAGE HERO BANNER (50vh):
+- "04 —" in pink, "Education" in 52px white
+- Subtext: "The foundations that shaped how I think and build."
+
+BLOCK 1 — Main Timeline (~80vh):
+Heading: "Academic Journey" in 32px white.
+Vertical timeline, center line in pink, alternating left-right cards:
+
+Entry 1 (RIGHT side):
+🎓 REVA University
+B.Tech in Computer Science Engineering
+School of Electronics and Communication Engineering
+2023 – 2027 (Currently Pursuing)
+Pink badge: "CURRENT"
+Description (18px):
+"I'm currently in my second year of B.Tech CSE at REVA University, Bengaluru. 
+My coursework spans C programming, IoT systems, Electronics fundamentals, 
+and project-based learning. I've been involved in multiple tech projects and 
+innovation programs during my time here."
+Highlight tags: C Programming · IoT · Electronics · Project-Based Learning
+
+Entry 2 (LEFT side):
+📘 Sindhi PU College
+Pre-University Course (PUC)
+Science Stream
+Description (18px):
+"Completed my PUC from Sindhi PU College, where I developed a strong 
+foundation in Science and Mathematics — the building blocks for my 
+engineering journey."
+Highlight tags: Science · Mathematics · Foundations
+
+Entry 3 (RIGHT side):
+🏫 SVN English High School
+Secondary School (SSLC)
+Description (18px):
+"My school years at SVN English High School gave me discipline, curiosity, 
+and a love for learning. This is where my interest in computers and 
+technology first sparked."
+Highlight tags: SSLC · Early Tech Interest · Foundation
+
+BLOCK 2 — "Coursework Spotlight" (~40vh):
+Heading: "Key Subjects I've Studied" in 28px white.
+Grid of subject cards (3 columns), dark bg, pink left border, 18px:
+- C Programming — "Algorithms, logic, memory management, file I/O"
+- IoT Systems — "ESP32, BLE, sensors, relay boards, embedded projects"
+- Electronics Fundamentals — "Circuit design, components, PCB basics"
+- Data Structures — "Arrays, linked lists, searching and sorting"
+- Computer Networks — "Protocols, layers, communication basics"
+- Engineering Mathematics — "Linear algebra, calculus, probability"
+
+BLOCK 3 — "Beyond Classroom" (~30vh):
+Heading: "Where I Also Learn" in 28px white.
+Three cards:
+- 🌐 Online Platforms — "Coursera, YouTube, freeCodeCamp, and AI tools for self-learning"
+- 🤝 Peer Collaboration — "Working with teammates on live projects at university"
+- 🔨 Hands-On Projects — "Building real IoT and web projects to apply what I learn"
+
+CTA: "See My Projects →" linking to projects.html
+
+========================================
+PAGE 5 — projects.html (PROJECTS)
+Scroll length: ~220vh
+========================================
+
+PAGE HERO BANNER (50vh):
+- "05 —" in pink, "Projects" in 52px white
+- Subtext: "Real things I've built — from hardware to websites to ventures."
+
+BLOCK 1 — Featured Projects (~120vh):
+Heading: "Things I've Built" in 32px white.
+
+PROJECT 1 — VANI (full width card, large):
+Card: dark bg, pink left border 4px, border-radius 16px, padding 40px.
+Top row: "🎙️ VANI" in 32px white bold + pink badge "IoT Project"
+Subtitle in 20px pink: "Voice Revenue Smart Living"
+Description in 18px #ccc, line-height 2:
+"VANI is a smart home automation system I built as part of my IoT coursework 
+at REVA University. The system uses an ESP32 microcontroller connected to a 
+custom PCB relay board, a DHT11 temperature and humidity sensor, and a BLE 
+Controller mobile app for wireless control."
+
+"The project enables users to control home appliances (lights, fans, other 
+devices) wirelessly over Bluetooth Low Energy (BLE) directly from their 
+smartphone — no internet connection required. The DHT11 sensor provides 
+real-time temperature and humidity readings displayed in the app."
+
+"This project taught me the full IoT pipeline — from hardware circuit design 
+and PCB layout to firmware programming on the ESP32 and testing end-to-end 
+BLE communication."
+
+Tech Stack tags (pink bordered chips, 16px):
+ESP32 · BLE · DHT11 · Custom PCB · Relay Board · IoT · Embedded C · BLE Controller App
+
+Two stat boxes below:
+- "4" Devices Controlled
+- "100%" BLE Wireless
+
+PROJECT 2 — RapidReach (full width card, large):
+Card: dark bg, pink left border 4px, border-radius 16px, padding 40px.
+Top row: "🚨 RapidReach" in 32px white bold + pink badge "Startup Venture"
++ second badge in magenta "IGNITE Program"
+Subtitle in 20px pink: "Hyperlocal Emergency Response Platform"
+Description in 18px #ccc, line-height 2:
+"RapidReach is a browser-based emergency response platform I co-built as part 
+of the Wadhwani Foundation IGNITE Program — an innovation and entrepreneurship 
+initiative. I served as the UI/UX Designer and Product Planner on a four-person 
+team building this venture."
+
+"The platform is designed for urban and semi-urban India, connecting people in 
+emergencies with the nearest available volunteers, responders, and resources — 
+faster than traditional emergency systems. The platform features an SOS 
+Dashboard, Volunteer Portal, Admin Panel, and Registration/Login flows."
+
+"My responsibilities included designing all five key website pages (Landing Page, 
+SOS Dashboard, Volunteer Portal, Register/Login, Admin Panel), creating user 
+journey flowcharts, defining core product features, and producing formal 
+deliverable documents for the IGNITE program milestones."
+
+"A key moment in this project was a strategic pivot — shifting from a mobile 
+app to a browser-based website to maximize accessibility across devices 
+without requiring downloads."
+
+Tech Stack tags:
+HTML · CSS · JavaScript · Figma · UX Design · Product Planning · Browser-Based
+
+Four stat boxes below:
+- "5" Pages Designed
+- "4" Team Members
+- "1" Strategic Pivot
+- "2" Milestones Submitted
+
+BLOCK 2 — "What I Learned" (~40vh):
+Heading: "Key Takeaways" in 28px white.
+Two columns:
+Left (from VANI): list of 4 learnings with pink bullet points, 17px:
+- Full IoT pipeline from hardware to app
+- BLE communication and ESP32 firmware
+- PCB design and relay circuit wiring
+- Writing structured academic technical reports
+
+Right (from RapidReach): list of 4 learnings with pink bullet points, 17px:
+- UX design for real-world emergency scenarios
+- Product planning and feature prioritization
+- Working in a startup team under a mentorship program
+- Strategic pivoting based on user accessibility needs
+
+CTA: "See My Achievements →" linking to achievements.html
+
+========================================
+PAGE 6 — achievements.html (ACHIEVEMENTS)
+Scroll length: ~180vh
+========================================
+
+PAGE HERO BANNER (50vh):
+- "06 —" in pink, "Achievements" in 52px white
+- Subtext: "Milestones that mark my journey so far."
+
+BLOCK 1 — Main Achievements (~80vh):
+Heading: "What I've Earned" in 32px white.
+
+ACHIEVEMENT 1 (large card, full width):
+🏆 Google Student Developer Ambassador (IMO)
+Pink badge: "Recognition"
+Description in 18px #ccc, line-height 2:
+"I was recognized as a Google Student Developer Ambassador under the IMO 
+(International Mathematical Olympiad / Google Student program). This achievement 
+reflects my commitment to the developer community, technical learning, and 
+representing Google's developer ecosystem among my peers at university."
+"As an ambassador, I promote developer tools, communities, and programs — 
+helping students around me discover Google technologies and grow their 
+technical skills."
+Impact tags: Community Building · Google · Developer Advocacy · Recognition
+
+ACHIEVEMENT 2 (large card, full width):
+🌟 Wadhwani Foundation IGNITE Program
+Pink badge: "Innovation" + magenta badge: "Entrepreneurship"
+Description in 18px #ccc, line-height 2:
+"I was selected for the Wadhwani Foundation IGNITE Program — a highly 
+competitive innovation and entrepreneurship initiative designed to help 
+students build real startup ventures from the ground up."
+"Within the program, I serve as the UI/UX Designer and Product Planner 
+for Team RapidReach — a four-person team building a hyperlocal emergency 
+response platform for urban and semi-urban India."
+"The IGNITE program pushed me to think beyond just coding — to understand 
+users deeply, validate ideas with research, plan product features strategically, 
+and present to mentors and evaluators with confidence."
+"I contributed to multiple formal milestone deliverables, co-designed the full 
+product experience, and helped steer a major strategic pivot that improved 
+the platform's reach and usability."
+Impact tags: Entrepreneurship · Product Design · Startup · Innovation · Team Leadership
+
+BLOCK 2 — "Milestone Timeline" (~40vh):
+Heading: "My Journey So Far" in 28px white.
+Horizontal timeline with pink dots and connecting pink line:
+- 2025 → Joined REVA University B.Tech CSE
+- 2026 → Built VANI IoT Smart Home Project
+- 2026 → Designed RapidReach as UI/UX Designer
+- 2026 → Google Student Developer Ambassador
+
+
+BLOCK 3 — "What's Next" (~30vh):
+Heading: "Goals on the Horizon" in 28px white.
+Three cards with pink checkmark icon, 20px title, 16px description:
+- 🎯 First Tech Internship — "Gain real-world industry experience in web or product"
+- 🌐 Launch RapidReach — "Take RapidReach live as a fully working platform"
+- 💻 Full Stack Certification — "Complete a recognized full stack development course"
+
+CTA: "Get in Touch →" linking to contact.html
+
+========================================
+PAGE 7 — contact.html (CONTACT)
+Scroll length: ~150vh
+========================================
+
+PAGE HERO BANNER (50vh):
+- "07 —" in pink, "Contact" in 52px white
+- Subtext: "Let's build something together. I'm just a message away."
+
+BLOCK 1 — "Let's Connect" (~60vh):
+Two column layout:
+
+LEFT — Contact Info cards (stacked, each with pink icon, 18px):
+- 📍 Location: Bengaluru, Karnataka, India
+- 🎓 University: REVA University, B.Tech CSE
+- 💼 Open To: Internships, Freelance, Collaborations
+- 🕐 Response Time: Usually within 24 hours
+MAIL : shaziyabanu5365@gmail.com
+- 🌐 GitHub: https://github.com/Shaziya2006
+- 💼 LinkedIn: https://www.linkedin.com/in/shaziya-banu-k-97502b388/
+
+RIGHT — Large contact buttons stacked (20px font, full width, padding 20px):
+- "🐙 Visit My GitHub" → https://github.com/Shaziya2006
+  Description below: "Check out my code, projects, and contributions"
+- "💼 Connect on LinkedIn" → https://www.linkedin.com/in/shaziya-banu-k-97502b388/
+  Description below: "Let's grow our professional network"
+Both buttons: outlined pink, hover fills solid pink, border-radius 12px.
+
+BLOCK 2 — "What I'm Open To" (~40vh):
+Heading: "How We Can Work Together" in 28px white.
+Four cards in 2x2 grid, pink icon, 20px title, 16px description:
+- 🤝 Collaborations — "Join me on a project or bring me onto yours"
+- 💼 Internships — "I'm actively looking for my first tech internship"
+- 🎨 Freelance Projects — "Need a website or UI design? Let's talk"
+- 💡 Idea Exchange — "Got an interesting idea? I love a good tech convo"
+
+BLOCK 3 — Closing CTA (~30vh):
+Full width centered dark card, pink border, border-radius 16px, padding 60px:
+Heading in 32px white: "Ready to Start a Conversation?"
+Subtext in 18px #ccc:
+"Whether you have a project in mind, want to collaborate, or just want to say hi — 
+my inbox is always open. Let's create something amazing together."
+Two buttons:
+- Solid pink: "GitHub ↗" → https://github.com/Shaziya2006
+- Outlined pink: "LinkedIn ↗" → https://www.linkedin.com/in/shaziya-banu-k-97502b388/
+
+========================================
+GLOBAL RULES FOR ALL PAGES
+========================================
+- Font: Space Grotesk (headings) + Inter (body) from Google Fonts
+- Base font: 18px, line-height 1.9
+- Section headings: 32–36px white, font-weight 600
+- Page banner headings: 52px white bold
+- Hero name: 68px white bold
+- Body text: #cccccc
+- Muted text: #666666
+- Pink accent: #ff2d78
+- Cards: background #111111, border-radius 12–16px, subtle pink border
+- Pink hover glow: box-shadow 0 0 24px rgba(255,45,120,0.35)
+- All cards lift slightly on hover (translateY -6px) with glow
+- Scroll fade-in animation using Intersection Observer on all blocks
+- Smooth scroll behavior
+- Fully mobile responsive on all 7 pages
+- Hamburger nav on mobile
+- Active page highlighted in navbar
+
+OUTPUT: Generate all 7 separate HTML files. Each file is complete with its own 
+<style> in <head> and <script> before </body>. Shared navbar and footer HTML is 
+copy-pasted into each file. No frameworks, no libraries — pure HTML, CSS, JS only.
+
+GitHub Copilot: I'll create your complete 7-page portfolio website with all the specifications you've provided. Let me start building all the HTML files. 
+
+Created [](file:///c%3A/Users/shazi/OneDrive/Desktop/portfolio/ShaziyaBanu_K.com/index.html)
+
+Created [](file:///c%3A/Users/shazi/OneDrive/Desktop/portfolio/ShaziyaBanu_K.com/about.html)
+
+Created [](file:///c%3A/Users/shazi/OneDrive/Desktop/portfolio/ShaziyaBanu_K.com/skills.html)
+
+Created [](file:///c%3A/Users/shazi/OneDrive/Desktop/portfolio/ShaziyaBanu_K.com/education.html)
+
+Created [](file:///c%3A/Users/shazi/OneDrive/Desktop/portfolio/ShaziyaBanu_K.com/projects.html)
+
+Create File
+
+Made changes.

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements — Shaziya Banu K</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #cccccc;
+            line-height: 1.9;
+            font-size: 18px;
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 45, 120, 0.1);
+            padding: 20px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #cccccc;
+            font-size: 16px;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ff2d78;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #ff2d78;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* HERO BANNER */
+        .hero-banner {
+            margin-top: 80px;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .hero-banner h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .hero-banner .pink-number {
+            color: #ff2d78;
+            font-size: 52px;
+            margin-right: 20px;
+        }
+
+        .hero-banner p {
+            color: #cccccc;
+            font-size: 18px;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+
+        /* ACHIEVEMENT CARD */
+        .achievement-card {
+            background: #111111;
+            border: 1px solid rgba(255, 45, 120, 0.2);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            transition: all 0.3s;
+        }
+
+        .achievement-card:hover {
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+            border-color: #ff2d78;
+            transform: translateY(-6px);
+        }
+
+        .achievement-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .achievement-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ff2d78;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge.magenta {
+            background: #dd0099;
+        }
+
+        .achievement-description {
+            color: #cccccc;
+            font-size: 18px;
+            line-height: 2;
+            margin-bottom: 25px;
+        }
+
+        .achievement-description p {
+            margin-bottom: 15px;
+        }
+
+        .impact-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .impact-tag {
+            background: rgba(255, 45, 120, 0.1);
+            color: #ff2d78;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* MILESTONE TIMELINE */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .milestone {
+            background: #111111;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 45, 120, 0.2);
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            padding-top: 50px;
+        }
+
+        .milestone:hover {
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+            border-color: #ff2d78;
+            transform: translateY(-6px);
+        }
+
+        .milestone-dot {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 32px;
+            height: 32px;
+            background: #ff2d78;
+            border: 3px solid #0a0a0a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .milestone-year {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            color: #ff2d78;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .milestone-text {
+            font-size: 16px;
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        /* GOALS SECTION */
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .goal-card {
+            background: #111111;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 45, 120, 0.2);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .goal-card:hover {
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+            transform: translateY(-6px);
+            border-color: #ff2d78;
+        }
+
+        .goal-card .emoji {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .goal-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .goal-card p {
+            font-size: 16px;
+            color: #cccccc;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff2d78;
+            color: #ffffff;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #ff2d78;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+            transform: translateY(-6px);
+        }
+
+        /* FADE-IN ANIMATION */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0a0a0a;
+            border-top: 1px solid rgba(255, 45, 120, 0.1);
+            padding: 40px;
+            text-align: center;
+            color: #666666;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                flex-direction: column;
+                background: rgba(10, 10, 10, 0.98);
+                width: 100%;
+                text-align: center;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s;
+            }
+
+            .nav-links.active {
+                max-height: 400px;
+            }
+
+            .nav-links a {
+                padding: 20px;
+                border-bottom: 1px solid rgba(255, 45, 120, 0.1);
+            }
+
+            .timeline {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .goals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-banner h1 {
+                font-size: 36px;
+            }
+
+            .hero-banner .pink-number {
+                font-size: 36px;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+
+            .nav-container {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SK</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="achievements.html" class="active">Achievements</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+        <div>
+            <h1><span class="pink-number">06 —</span>Achievements</h1>
+            <p>Milestones that mark my journey so far.</p>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section class="fade-in">
+        <h2>What I've Earned</h2>
+
+        <!-- ACHIEVEMENT 1 -->
+        <div class="achievement-card">
+            <div class="achievement-header">
+                <div class="achievement-title">🏆 Google Student Developer Ambassador (IMO)</div>
+                <span class="badge">Recognition</span>
+            </div>
+            <div class="achievement-description">
+                <p>I was recognized as a Google Student Developer Ambassador under the IMO (International Mathematical Olympiad / Google Student program). This achievement reflects my commitment to the developer community, technical learning, and representing Google's developer ecosystem among my peers at university.</p>
+                <p>As an ambassador, I promote developer tools, communities, and programs — helping students around me discover Google technologies and grow their technical skills.</p>
+            </div>
+            <div class="impact-tags">
+                <span class="impact-tag">Community Building</span>
+                <span class="impact-tag">Google</span>
+                <span class="impact-tag">Developer Advocacy</span>
+                <span class="impact-tag">Recognition</span>
+            </div>
+        </div>
+
+        <!-- ACHIEVEMENT 2 -->
+        <div class="achievement-card">
+            <div class="achievement-header">
+                <div class="achievement-title">🌟 Wadhwani Foundation IGNITE Program</div>
+                <span class="badge">Innovation</span>
+                <span class="badge magenta">Entrepreneurship</span>
+            </div>
+            <div class="achievement-description">
+                <p>I was selected for the Wadhwani Foundation IGNITE Program — a highly competitive innovation and entrepreneurship initiative designed to help students build real startup ventures from the ground up.</p>
+                <p>Within the program, I serve as the UI/UX Designer and Product Planner for Team RapidReach — a four-person team building a hyperlocal emergency response platform for urban and semi-urban India.</p>
+                <p>The IGNITE program pushed me to think beyond just coding — to understand users deeply, validate ideas with research, plan product features strategically, and present to mentors and evaluators with confidence.</p>
+                <p>I contributed to multiple formal milestone deliverables, co-designed the full product experience, and helped steer a major strategic pivot that improved the platform's reach and usability.</p>
+            </div>
+            <div class="impact-tags">
+                <span class="impact-tag">Entrepreneurship</span>
+                <span class="impact-tag">Product Design</span>
+                <span class="impact-tag">Startup</span>
+                <span class="impact-tag">Innovation</span>
+                <span class="impact-tag">Team Leadership</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- MILESTONE TIMELINE -->
+    <section class="fade-in">
+        <h2>My Journey So Far</h2>
+        <div class="timeline">
+            <div class="milestone">
+                <div class="milestone-dot">1</div>
+                <div class="milestone-year">2025</div>
+                <div class="milestone-text">Joined REVA University B.Tech CSE</div>
+            </div>
+            <div class="milestone">
+                <div class="milestone-dot">2</div>
+                <div class="milestone-year">2026</div>
+                <div class="milestone-text">Built VANI IoT Smart Home Project</div>
+            </div>
+            <div class="milestone">
+                <div class="milestone-dot">3</div>
+                <div class="milestone-year">2026</div>
+                <div class="milestone-text">Designed RapidReach as UI/UX Designer</div>
+            </div>
+            <div class="milestone">
+                <div class="milestone-dot">4</div>
+                <div class="milestone-year">2026</div>
+                <div class="milestone-text">Google Student Developer Ambassador</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOALS SECTION -->
+    <section class="fade-in">
+        <h2>Goals on the Horizon</h2>
+        <div class="goals-grid">
+            <div class="goal-card">
+                <span class="emoji">🎯</span>
+                <h4>First Tech Internship</h4>
+                <p>Gain real-world industry experience in web or product</p>
+            </div>
+            <div class="goal-card">
+                <span class="emoji">🌐</span>
+                <h4>Launch RapidReach</h4>
+                <p>Take RapidReach live as a fully working platform</p>
+            </div>
+            <div class="goal-card">
+                <span class="emoji">💻</span>
+                <h4>Full Stack Certification</h4>
+                <p>Complete a recognized full stack development course</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section fade-in">
+        <a href="contact.html" class="cta-button">Get in Touch →</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Shaziya Banu K. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when link clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for Fade-in Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Set active nav link
+        function setActiveNav() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        setActiveNav();
+    </script>
+</body>
+</html>

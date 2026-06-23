@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me — Shaziya Banu K</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #cccccc;
+            line-height: 1.9;
+            font-size: 18px;
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 45, 120, 0.1);
+            padding: 20px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #cccccc;
+            font-size: 16px;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ff2d78;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #ff2d78;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* HERO BANNER */
+        .hero-banner {
+            margin-top: 80px;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .hero-banner h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .hero-banner .pink-number {
+            color: #ff2d78;
+            font-size: 52px;
+            margin-right: 20px;
+        }
+
+        .hero-banner p {
+            color: #cccccc;
+            font-size: 18px;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+
+        /* WHO I AM BLOCK */
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .intro-text h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 26px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+
+        .intro-text:first-child h3 {
+            margin-top: 0;
+        }
+
+        .intro-text p {
+            font-size: 18px;
+            color: #cccccc;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+
+        /* VALUES CARDS */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .value-card {
+            background: #111111;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 45, 120, 0.2);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .value-card:hover {
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+            transform: translateY(-6px);
+            border-color: #ff2d78;
+        }
+
+        .value-card .emoji {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .value-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .value-card p {
+            font-size: 16px;
+            color: #cccccc;
+        }
+
+        /* SKILL BARS */
+        .skills-snapshot {
+            display: grid;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .skill-bar {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .skill-bar-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .skill-bar-track {
+            width: 100%;
+            height: 8px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: #ff2d78;
+            border-radius: 10px;
+            animation: fillBar 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fillBar {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* STATUS CARDS */
+        .status-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .status-card {
+            background: #111111;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #ff2d78;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .status-card .emoji {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .status-card-content h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .status-card-content p {
+            font-size: 14px;
+            color: #cccccc;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff2d78;
+            color: #ffffff;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #ff2d78;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+            transform: translateY(-6px);
+        }
+
+        /* FADE-IN ANIMATION */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0a0a0a;
+            border-top: 1px solid rgba(255, 45, 120, 0.1);
+            padding: 40px;
+            text-align: center;
+            color: #666666;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                flex-direction: column;
+                background: rgba(10, 10, 10, 0.98);
+                width: 100%;
+                text-align: center;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s;
+            }
+
+            .nav-links.active {
+                max-height: 400px;
+            }
+
+            .nav-links a {
+                padding: 20px;
+                border-bottom: 1px solid rgba(255, 45, 120, 0.1);
+            }
+
+            .intro-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .status-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-banner h1 {
+                font-size: 36px;
+            }
+
+            .hero-banner .pink-number {
+                font-size: 36px;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+
+            .nav-container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SK</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+        <div>
+            <h1><span class="pink-number">02 —</span>About Me</h1>
+            <p>The story behind the code and creativity.</p>
+        </div>
+    </section>
+
+    <!-- INTRO BLOCK -->
+    <section class="fade-in">
+        <div class="intro-content">
+            <div class="intro-text">
+                <h3>Who I Am</h3>
+                <p>I'm Shaziya Banu K — a curious, creative, and driven Computer Science Engineering student at REVA University's School of Electronics and Communication Engineering in Bengaluru, India. I believe technology is most powerful when it's built with empathy and intention.</p>
+            </div>
+            <div class="intro-text">
+                <h3>My Story</h3>
+                <p>My journey into tech started with a simple fascination — how do websites actually work? That curiosity led me to frontend development, then to IoT, then to AI tools, and now I'm on my way to becoming a Full Stack Software Engineer. Every project I take on pushes me to learn something new, think differently, and build better.</p>
+            </div>
+        </div>
+        <div class="intro-text fade-in">
+            <h3>Beyond the Screen</h3>
+            <p>When I'm not coding or designing, you'll find me exploring new AI tools, sketching UI ideas in my notebook, participating in innovation programs, or just having a deep conversation about the future of technology. I'm a firm believer that the best engineers are also great storytellers.</p>
+        </div>
+    </section>
+
+    <!-- VALUES BLOCK -->
+    <section class="fade-in">
+        <h2>What Drives Me</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <span class="emoji">💡</span>
+                <h4>Curiosity</h4>
+                <p>I never stop asking 'why' and 'what if'</p>
+            </div>
+            <div class="value-card">
+                <span class="emoji">🎯</span>
+                <h4>Impact</h4>
+                <p>I build things that solve real problems for real people</p>
+            </div>
+            <div class="value-card">
+                <span class="emoji">🤝</span>
+                <h4>Collaboration</h4>
+                <p>Great ideas come from great teams</p>
+            </div>
+            <div class="value-card">
+                <span class="emoji">🚀</span>
+                <h4>Growth</h4>
+                <p>Every day is a chance to learn something new</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SNAPSHOT BLOCK -->
+    <section class="fade-in">
+        <h2>A Quick Snapshot</h2>
+        <div class="skills-snapshot">
+            <div class="skill-bar">
+                <div class="skill-bar-header">
+                    <span>Frontend Skills</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar-track">
+                    <div class="skill-bar-fill" style="width: 75%; animation-delay: 0s;"></div>
+                </div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-bar-header">
+                    <span>IoT & Hardware</span>
+                    <span>65%</span>
+                </div>
+                <div class="skill-bar-track">
+                    <div class="skill-bar-fill" style="width: 65%; animation-delay: 0.2s;"></div>
+                </div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-bar-header">
+                    <span>UI/UX Design</span>
+                    <span>70%</span>
+                </div>
+                <div class="skill-bar-track">
+                    <div class="skill-bar-fill" style="width: 70%; animation-delay: 0.4s;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATUS DASHBOARD BLOCK -->
+    <section class="fade-in">
+        <h2>Currently</h2>
+        <div class="status-grid">
+            <div class="status-card">
+                <span class="emoji">📚</span>
+                <div class="status-card-content">
+                    <h4>Currently Studying</h4>
+                    <p>B.Tech CSE at REVA University (2023–2027)</p>
+                </div>
+            </div>
+            <div class="status-card">
+                <span class="emoji">🔨</span>
+                <div class="status-card-content">
+                    <h4>Currently Building</h4>
+                    <p>RapidReach — Emergency Response Platform</p>
+                </div>
+            </div>
+            <div class="status-card">
+                <span class="emoji">🌱</span>
+                <div class="status-card-content">
+                    <h4>Currently Learning</h4>
+                    <p>Full Stack Web Development</p>
+                </div>
+            </div>
+            <div class="status-card">
+                <span class="emoji">🎯</span>
+                <div class="status-card-content">
+                    <h4>Current Goal</h4>
+                    <p>Land my first tech internship</p>
+                </div>
+            </div>
+            <div class="status-card">
+                <span class="emoji">💬</span>
+                <div class="status-card-content">
+                    <h4>Open To</h4>
+                    <p>Collaborations, internships, freelance projects</p>
+                </div>
+            </div>
+            <div class="status-card">
+                <span class="emoji">📍</span>
+                <div class="status-card-content">
+                    <h4>Based In</h4>
+                    <p>Bengaluru, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section fade-in">
+        <a href="skills.html" class="cta-button">See My Skills →</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Shaziya Banu K. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when link clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for Fade-in Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Set active nav link
+        function setActiveNav() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        setActiveNav();
+    </script>
+</body>
+</html>

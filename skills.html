@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills — Shaziya Banu K</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #cccccc;
+            line-height: 1.9;
+            font-size: 18px;
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 45, 120, 0.1);
+            padding: 20px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #cccccc;
+            font-size: 16px;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ff2d78;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #ff2d78;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* HERO BANNER */
+        .hero-banner {
+            margin-top: 80px;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .hero-banner h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .hero-banner .pink-number {
+            color: #ff2d78;
+            font-size: 52px;
+            margin-right: 20px;
+        }
+
+        .hero-banner p {
+            color: #cccccc;
+            font-size: 18px;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+
+        /* SKILL CARDS GRID */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .skill-card {
+            background: #111111;
+            border: 3px solid transparent;
+            border-top-color: #ff2d78;
+            border-radius: 14px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+            transform: translateY(-6px);
+            border-color: #ff2d78;
+        }
+
+        .skill-card .emoji {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .skill-card p {
+            font-size: 16px;
+            color: #cccccc;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .skill-progress {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar-track {
+            flex: 1;
+            height: 6px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: #ff2d78;
+            border-radius: 10px;
+        }
+
+        .proficiency {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ff2d78;
+        }
+
+        /* TOOLS SECTION */
+        .tools-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 80px;
+        }
+
+        .tool-chip {
+            background: transparent;
+            border: 2px solid #ff2d78;
+            color: #ff2d78;
+            padding: 12px 24px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .tool-chip:hover {
+            background: #ff2d78;
+            color: #ffffff;
+        }
+
+        /* LEARNING CARDS */
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .learning-card {
+            background: #111111;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 45, 120, 0.2);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .learning-card:hover {
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+            transform: translateY(-6px);
+            border-color: #ff2d78;
+        }
+
+        .learning-card .emoji {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .learning-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .learning-card p {
+            font-size: 16px;
+            color: #cccccc;
+        }
+
+        /* LEVELING UP SECTION */
+        .leveling-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .level-card {
+            background: #111111;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #ff2d78;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .level-card-content h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .level-badge {
+            background: #ff2d78;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .level-badge.starting {
+            background: rgba(255, 45, 120, 0.3);
+            color: #ff2d78;
+        }
+
+        .level-badge.roadmap {
+            background: rgba(100, 100, 100, 0.3);
+            color: #999999;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff2d78;
+            color: #ffffff;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #ff2d78;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+            transform: translateY(-6px);
+        }
+
+        /* FADE-IN ANIMATION */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0a0a0a;
+            border-top: 1px solid rgba(255, 45, 120, 0.1);
+            padding: 40px;
+            text-align: center;
+            color: #666666;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                flex-direction: column;
+                background: rgba(10, 10, 10, 0.98);
+                width: 100%;
+                text-align: center;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s;
+            }
+
+            .nav-links.active {
+                max-height: 400px;
+            }
+
+            .nav-links a {
+                padding: 20px;
+                border-bottom: 1px solid rgba(255, 45, 120, 0.1);
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .learning-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .leveling-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-banner h1 {
+                font-size: 36px;
+            }
+
+            .hero-banner .pink-number {
+                font-size: 36px;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+
+            .nav-container {
+                padding: 0 20px;
+            }
+
+            .level-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SK</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+        <div>
+            <h1><span class="pink-number">03 —</span>My Skills</h1>
+            <p>A toolkit built through projects, curiosity, and late nights.</p>
+        </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS BLOCK -->
+    <section class="fade-in">
+        <h2>What I Know</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <span class="emoji">🌐</span>
+                <h3>Frontend Development</h3>
+                <p>Building clean, responsive, and accessible web interfaces using HTML, CSS, and JavaScript. I focus on pixel-perfect layouts and smooth user interactions.</p>
+                <div class="skill-progress">
+                    <div class="progress-bar-track">
+                        <div class="progress-bar-fill" style="width: 78%;"></div>
+                    </div>
+                    <span class="proficiency">78%</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <span class="emoji">💻</span>
+                <h3>Website Development</h3>
+                <p>End-to-end website creation from wireframe to deployment. I understand the full pipeline of turning an idea into a live, working website.</p>
+                <div class="skill-progress">
+                    <div class="progress-bar-track">
+                        <div class="progress-bar-fill" style="width: 75%;"></div>
+                    </div>
+                    <span class="proficiency">75%</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <span class="emoji">🤖</span>
+                <h3>Prompt Engineering</h3>
+                <p>Crafting precise, creative prompts to get the best outputs from AI models like Claude, ChatGPT, and Copilot. I use AI as a superpower in my workflow.</p>
+                <div class="skill-progress">
+                    <div class="progress-bar-track">
+                        <div class="progress-bar-fill" style="width: 80%;"></div>
+                    </div>
+                    <span class="proficiency">80%</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <span class="emoji">📡</span>
+                <h3>IoT Systems</h3>
+                <p>Working with microcontrollers like ESP32, sensors like DHT11, BLE communication, and relay boards to build smart, connected hardware projects.</p>
+                <div class="skill-progress">
+                    <div class="progress-bar-track">
+                        <div class="progress-bar-fill" style="width: 65%;"></div>
+                    </div>
+                    <span class="proficiency">65%</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <span class="emoji">🎨</span>
+                <h3>UI/UX Design</h3>
+                <p>Designing intuitive user interfaces and user journeys. I use tools like Figma and focus on accessibility, clarity, and visual hierarchy in every design.</p>
+                <div class="skill-progress">
+                    <div class="progress-bar-track">
+                        <div class="progress-bar-fill" style="width: 72%;"></div>
+                    </div>
+                    <span class="proficiency">72%</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <span class="emoji">🚀</span>
+                <h3>Full Stack Development</h3>
+                <p>Currently on the journey — learning backend concepts, APIs, databases, and server-side logic to complement my frontend skills.</p>
+                <div class="skill-progress">
+                    <div class="progress-bar-track">
+                        <div class="progress-bar-fill" style="width: 35%;"></div>
+                    </div>
+                    <span class="proficiency">35%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOOLS SECTION -->
+    <section class="fade-in">
+        <h2>My Toolkit</h2>
+        <div class="tools-row">
+            <span class="tool-chip">VS Code</span>
+            <span class="tool-chip">GitHub</span>
+            <span class="tool-chip">Git</span>
+            <span class="tool-chip">Figma</span>
+            <span class="tool-chip">ESP32</span>
+            <span class="tool-chip">Arduino IDE</span>
+            <span class="tool-chip">ChatGPT</span>
+            <span class="tool-chip">Claude AI</span>
+            <span class="tool-chip">GitHub Copilot</span>
+            <span class="tool-chip">HTML5</span>
+            <span class="tool-chip">CSS3</span>
+            <span class="tool-chip">JavaScript</span>
+            <span class="tool-chip">C</span>
+            <span class="tool-chip">Moodle</span>
+        </div>
+    </section>
+
+    <!-- HOW I LEARN SECTION -->
+    <section class="fade-in">
+        <h2>How I Learn</h2>
+        <div class="learning-grid">
+            <div class="learning-card">
+                <span class="emoji">🛠️</span>
+                <h4>Build Projects</h4>
+                <p>The best way I learn is by building real things</p>
+            </div>
+            <div class="learning-card">
+                <span class="emoji">🤝</span>
+                <h4>Collaborate</h4>
+                <p>Working with teams teaches me more than any course</p>
+            </div>
+            <div class="learning-card">
+                <span class="emoji">🔍</span>
+                <h4>Explore</h4>
+                <p>I constantly explore new tools, papers, and trends</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEVELING UP SECTION -->
+    <section class="fade-in">
+        <h2>What I'm Learning Right Now</h2>
+        <div class="leveling-grid">
+            <div class="level-card">
+                <div class="level-card-content">
+                    <h4>Full Stack Web Development</h4>
+                </div>
+                <div class="level-badge">In Progress 🔄</div>
+            </div>
+            <div class="level-card">
+                <div class="level-card-content">
+                    <h4>React.js Fundamentals</h4>
+                </div>
+                <div class="level-badge starting">Starting Soon 📌</div>
+            </div>
+            <div class="level-card">
+                <div class="level-card-content">
+                    <h4>Backend with Node.js</h4>
+                </div>
+                <div class="level-badge roadmap">On the Roadmap 🗺️</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section fade-in">
+        <a href="education.html" class="cta-button">See My Education →</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Shaziya Banu K. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when link clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for Fade-in Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Set active nav link
+        function setActiveNav() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        setActiveNav();
+    </script>
+</body>
+</html>

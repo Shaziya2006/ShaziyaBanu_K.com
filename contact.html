@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Shaziya Banu K</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #cccccc;
+            line-height: 1.9;
+            font-size: 18px;
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 45, 120, 0.1);
+            padding: 20px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #cccccc;
+            font-size: 16px;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ff2d78;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #ff2d78;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* HERO BANNER */
+        .hero-banner {
+            margin-top: 80px;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .hero-banner h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .hero-banner .pink-number {
+            color: #ff2d78;
+            font-size: 52px;
+            margin-right: 20px;
+        }
+
+        .hero-banner p {
+            color: #cccccc;
+            font-size: 18px;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* CONNECT SECTION */
+        .connect-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: transparent;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .contact-card .emoji {
+            font-size: 24px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .contact-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .contact-card p {
+            font-size: 16px;
+            color: #cccccc;
+            margin: 0;
+        }
+
+        .contact-card a {
+            color: #ff2d78;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* CONTACT BUTTONS */
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-button {
+            display: block;
+            padding: 20px;
+            text-align: left;
+            background: transparent;
+            border: 2px solid #ff2d78;
+            border-radius: 12px;
+            color: #ff2d78;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .contact-button:hover {
+            background: #ff2d78;
+            color: #ffffff;
+        }
+
+        .contact-button-title {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .contact-button-description {
+            display: block;
+            font-size: 14px;
+            color: #cccccc;
+            font-weight: 400;
+        }
+
+        .contact-button:hover .contact-button-description {
+            color: #ffffff;
+        }
+
+        /* WORK WITH ME SECTION */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .work-card {
+            background: #111111;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 45, 120, 0.2);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .work-card:hover {
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+            transform: translateY(-6px);
+            border-color: #ff2d78;
+        }
+
+        .work-card .emoji {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .work-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .work-card p {
+            font-size: 16px;
+            color: #cccccc;
+        }
+
+        /* CTA CARD */
+        .cta-card {
+            background: #111111;
+            border: 2px solid #ff2d78;
+            border-radius: 16px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .cta-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-card p {
+            font-size: 18px;
+            color: #cccccc;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #ff2d78;
+            font-size: 16px;
+        }
+
+        .cta-button.solid {
+            background: #ff2d78;
+            color: #ffffff;
+        }
+
+        .cta-button.solid:hover {
+            background: transparent;
+            color: #ff2d78;
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+        }
+
+        .cta-button.outline {
+            background: transparent;
+            color: #ff2d78;
+        }
+
+        .cta-button.outline:hover {
+            background: #ff2d78;
+            color: #ffffff;
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+        }
+
+        /* FADE-IN ANIMATION */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0a0a0a;
+            border-top: 1px solid rgba(255, 45, 120, 0.1);
+            padding: 40px;
+            text-align: center;
+            color: #666666;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                flex-direction: column;
+                background: rgba(10, 10, 10, 0.98);
+                width: 100%;
+                text-align: center;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s;
+            }
+
+            .nav-links.active {
+                max-height: 400px;
+            }
+
+            .nav-links a {
+                padding: 20px;
+                border-bottom: 1px solid rgba(255, 45, 120, 0.1);
+            }
+
+            .connect-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-banner h1 {
+                font-size: 36px;
+            }
+
+            .hero-banner .pink-number {
+                font-size: 36px;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+
+            .nav-container {
+                padding: 0 20px;
+            }
+
+            .cta-card {
+                padding: 40px 20px;
+            }
+
+            .cta-card h3 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SK</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+        <div>
+            <h1><span class="pink-number">07 —</span>Contact</h1>
+            <p>Let's build something together. I'm just a message away.</p>
+        </div>
+    </section>
+
+    <!-- CONNECT SECTION -->
+    <section class="fade-in">
+        <h2>Let's Connect</h2>
+        <div class="connect-grid">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <span class="emoji">📍</span>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Bengaluru, Karnataka, India</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <span class="emoji">🎓</span>
+                    <div>
+                        <h4>University</h4>
+                        <p>REVA University, B.Tech CSE</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <span class="emoji">💼</span>
+                    <div>
+                        <h4>Open To</h4>
+                        <p>Internships, Freelance, Collaborations</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <span class="emoji">🕐</span>
+                    <div>
+                        <h4>Response Time</h4>
+                        <p>Usually within 24 hours</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <span class="emoji">✉️</span>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:shaziyabanu5365@gmail.com">shaziyabanu5365@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <span class="emoji">🌐</span>
+                    <div>
+                        <h4>GitHub</h4>
+                        <p><a href="https://github.com/Shaziya2006" target="_blank">github.com/Shaziya2006</a></p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <span class="emoji">💼</span>
+                    <div>
+                        <h4>LinkedIn</h4>
+                        <p><a href="https://www.linkedin.com/in/shaziya-banu-k-97502b388/" target="_blank">LinkedIn Profile</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-buttons">
+                <a href="https://github.com/Shaziya2006" target="_blank" class="contact-button">
+                    <span class="contact-button-title">🐙 Visit My GitHub</span>
+                    <span class="contact-button-description">Check out my code, projects, and contributions</span>
+                </a>
+                <a href="https://www.linkedin.com/in/shaziya-banu-k-97502b388/" target="_blank" class="contact-button">
+                    <span class="contact-button-title">💼 Connect on LinkedIn</span>
+                    <span class="contact-button-description">Let's grow our professional network</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORK WITH ME SECTION -->
+    <section class="fade-in">
+        <h2>How We Can Work Together</h2>
+        <div class="work-grid">
+            <div class="work-card">
+                <span class="emoji">🤝</span>
+                <h4>Collaborations</h4>
+                <p>Join me on a project or bring me onto yours</p>
+            </div>
+            <div class="work-card">
+                <span class="emoji">💼</span>
+                <h4>Internships</h4>
+                <p>I'm actively looking for my first tech internship</p>
+            </div>
+            <div class="work-card">
+                <span class="emoji">🎨</span>
+                <h4>Freelance Projects</h4>
+                <p>Need a website or UI design? Let's talk</p>
+            </div>
+            <div class="work-card">
+                <span class="emoji">💡</span>
+                <h4>Idea Exchange</h4>
+                <p>Got an interesting idea? I love a good tech convo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA CARD -->
+    <section class="fade-in">
+        <div class="cta-card">
+            <h3>Ready to Start a Conversation?</h3>
+            <p>Whether you have a project in mind, want to collaborate, or just want to say hi — my inbox is always open. Let's create something amazing together.</p>
+            <div class="cta-buttons">
+                <a href="https://github.com/Shaziya2006" target="_blank" class="cta-button solid">GitHub ↗</a>
+                <a href="https://www.linkedin.com/in/shaziya-banu-k-97502b388/" target="_blank" class="cta-button outline">LinkedIn ↗</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Shaziya Banu K. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when link clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for Fade-in Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Set active nav link
+        function setActiveNav() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        setActiveNav();
+    </script>
+</body>
+</html>

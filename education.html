@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education — Shaziya Banu K</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #cccccc;
+            line-height: 1.9;
+            font-size: 18px;
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 45, 120, 0.1);
+            padding: 20px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #cccccc;
+            font-size: 16px;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ff2d78;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #ff2d78;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* HERO BANNER */
+        .hero-banner {
+            margin-top: 80px;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .hero-banner h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .hero-banner .pink-number {
+            color: #ff2d78;
+            font-size: 52px;
+            margin-right: 20px;
+        }
+
+        .hero-banner p {
+            color: #cccccc;
+            font-size: 18px;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+
+        /* TIMELINE */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: #ff2d78;
+        }
+
+        .timeline-item {
+            margin-bottom: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .timeline-item:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: #ff2d78;
+            border: 3px solid #0a0a0a;
+            border-radius: 50%;
+            top: 30px;
+            z-index: 10;
+        }
+
+        .timeline-content {
+            background: #111111;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 45, 120, 0.2);
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .timeline-content:hover {
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+            border-color: #ff2d78;
+        }
+
+        .timeline-content h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content .subtitle {
+            color: #ff2d78;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content .duration {
+            color: #999999;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .timeline-badge {
+            display: inline-block;
+            background: #ff2d78;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content p {
+            font-size: 16px;
+            color: #cccccc;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .timeline-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: rgba(255, 45, 120, 0.1);
+            color: #ff2d78;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* COURSEWORK GRID */
+        .coursework-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .subject-card {
+            background: #111111;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #ff2d78;
+            transition: all 0.3s;
+        }
+
+        .subject-card:hover {
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+            transform: translateY(-6px);
+        }
+
+        .subject-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .subject-card p {
+            font-size: 14px;
+            color: #cccccc;
+        }
+
+        /* LEARNING SOURCES */
+        .learning-sources {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .source-card {
+            background: #111111;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 45, 120, 0.2);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .source-card:hover {
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+            transform: translateY(-6px);
+            border-color: #ff2d78;
+        }
+
+        .source-card .emoji {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .source-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .source-card p {
+            font-size: 16px;
+            color: #cccccc;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff2d78;
+            color: #ffffff;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #ff2d78;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            box-shadow: 0 0 24px rgba(255, 45, 120, 0.35);
+            transform: translateY(-6px);
+        }
+
+        /* FADE-IN ANIMATION */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0a0a0a;
+            border-top: 1px solid rgba(255, 45, 120, 0.1);
+            padding: 40px;
+            text-align: center;
+            color: #666666;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                flex-direction: column;
+                background: rgba(10, 10, 10, 0.98);
+                width: 100%;
+                text-align: center;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s;
+            }
+
+            .nav-links.active {
+                max-height: 400px;
+            }
+
+            .nav-links a {
+                padding: 20px;
+                border-bottom: 1px solid rgba(255, 45, 120, 0.1);
+            }
+
+            .timeline::before {
+                display: none;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item:nth-child(even) {
+                direction: ltr;
+            }
+
+            .timeline-dot {
+                position: static;
+                transform: none;
+                margin-bottom: 20px;
+            }
+
+            .coursework-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .learning-sources {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-banner h1 {
+                font-size: 36px;
+            }
+
+            .hero-banner .pink-number {
+                font-size: 36px;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+
+            .nav-container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SK</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="education.html" class="active">Education</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+        <div>
+            <h1><span class="pink-number">04 —</span>Education</h1>
+            <p>The foundations that shaped how I think and build.</p>
+        </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section class="fade-in">
+        <h2>Academic Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div style="text-align: right;">
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-content">
+                    <h3>🎓 REVA University</h3>
+                    <p class="subtitle">B.Tech in Computer Science Engineering</p>
+                    <p class="duration">School of Electronics and Communication Engineering</p>
+                    <p class="duration">2023 – 2027 (Currently Pursuing)</p>
+                    <span class="timeline-badge">CURRENT</span>
+                    <p>I'm currently in my second year of B.Tech CSE at REVA University, Bengaluru. My coursework spans C programming, IoT systems, Electronics fundamentals, and project-based learning. I've been involved in multiple tech projects and innovation programs during my time here.</p>
+                    <div class="timeline-tags">
+                        <span class="tag">C Programming</span>
+                        <span class="tag">IoT</span>
+                        <span class="tag">Electronics</span>
+                        <span class="tag">Project-Based Learning</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div style="text-align: left;">
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-content">
+                    <h3>📘 Sindhi PU College</h3>
+                    <p class="subtitle">Pre-University Course (PUC)</p>
+                    <p class="duration">Science Stream</p>
+                    <p>Completed my PUC from Sindhi PU College, where I developed a strong foundation in Science and Mathematics — the building blocks for my engineering journey.</p>
+                    <div class="timeline-tags">
+                        <span class="tag">Science</span>
+                        <span class="tag">Mathematics</span>
+                        <span class="tag">Foundations</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div style="text-align: right;">
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-content">
+                    <h3>🏫 SVN English High School</h3>
+                    <p class="subtitle">Secondary School (SSLC)</p>
+                    <p>My school years at SVN English High School gave me discipline, curiosity, and a love for learning. This is where my interest in computers and technology first sparked.</p>
+                    <div class="timeline-tags">
+                        <span class="tag">SSLC</span>
+                        <span class="tag">Early Tech Interest</span>
+                        <span class="tag">Foundation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSEWORK SPOTLIGHT -->
+    <section class="fade-in">
+        <h2>Key Subjects I've Studied</h2>
+        <div class="coursework-grid">
+            <div class="subject-card">
+                <h4>C Programming</h4>
+                <p>Algorithms, logic, memory management, file I/O</p>
+            </div>
+            <div class="subject-card">
+                <h4>IoT Systems</h4>
+                <p>ESP32, BLE, sensors, relay boards, embedded projects</p>
+            </div>
+            <div class="subject-card">
+                <h4>Electronics Fundamentals</h4>
+                <p>Circuit design, components, PCB basics</p>
+            </div>
+            <div class="subject-card">
+                <h4>Data Structures</h4>
+                <p>Arrays, linked lists, searching and sorting</p>
+            </div>
+            <div class="subject-card">
+                <h4>Computer Networks</h4>
+                <p>Protocols, layers, communication basics</p>
+            </div>
+            <div class="subject-card">
+                <h4>Engineering Mathematics</h4>
+                <p>Linear algebra, calculus, probability</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEARNING SOURCES -->
+    <section class="fade-in">
+        <h2>Where I Also Learn</h2>
+        <div class="learning-sources">
+            <div class="source-card">
+                <span class="emoji">🌐</span>
+                <h4>Online Platforms</h4>
+                <p>Coursera, YouTube, freeCodeCamp, and AI tools for self-learning</p>
+            </div>
+            <div class="source-card">
+                <span class="emoji">🤝</span>
+                <h4>Peer Collaboration</h4>
+                <p>Working with teammates on live projects at university</p>
+            </div>
+            <div class="source-card">
+                <span class="emoji">🔨</span>
+                <h4>Hands-On Projects</h4>
+                <p>Building real IoT and web projects to apply what I learn</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section fade-in">
+        <a href="projects.html" class="cta-button">See My Projects →</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Shaziya Banu K. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when link clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for Fade-in Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Set active nav link
+        function setActiveNav() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        setActiveNav();
+    </script>
+</body>
+</html>
